@@ -1,0 +1,32 @@
+
+
+<div class="panel">
+  <div class="panel-heading">
+    <h1><%= @skill.name %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3">
+        <h3>Projects</h3>
+        <ul>
+          <li>Project Ex</li>
+          <li>Project Ex</li>
+          <li>Project Ex</li>
+          <li>Project Ex</li>
+          <li>Project Ex</li>
+          <li>Project Ex</li>
+        </ul>
+      </div>
+      <div class="col-md-9 text-right">
+        <h3>Description</h3>
+        <p><%= @skill.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group btn-group-sm btn-group-justified">
+  <%= link_to "Edit #{@skill.name}", edit_skill_path(@skill), class: "btn btn-custom" %>
+  <%= link_to "Delete #{@skill.name}", skill_path(@skill), class: "btn btn-custom",
+                                  data: { confirm: "Are you sure you want to delete this skill?", method: "delete" }%>
+
+  </div>
+</div>

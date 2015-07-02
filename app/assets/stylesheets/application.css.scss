@@ -20,10 +20,11 @@
 body {
   color: #222;
   background-color: #9d9d9d;
+  margin-top: 50px;
 }
 
 a {
-  color: #22396C;
+  color: #FFD700;
   text-decoration: none;
 }
 
@@ -31,24 +32,47 @@ h1 {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #222;
+  color: #FFD700;
   text-align: center;
 }
 
+h2, h3, h4, h5, h6{
+  color: #FFD700;
+}
+
+.navbar-inverse .navbar-custom, .navbar-inverse .navbar-nav > li > a {
+  color: #FFD700;
+}
+
+.navbar {
+  border-color: #9d9d9d;
+}
+
 .alert-custom {
-  background-color: #22396C;
-  color: #fff;
-  border-color: #22396C;
+  background-color: #FFD700;
+  color: #222;
+  border-color: #FFD700;
   border-radius: 0px;
 }
 
 .btn-custom {
-  background-color: #22396C;
-  color: #fff;
-  border-color: #22396C;
+  background-color: #FFD700;
+  color: #222;
+  border: 0px;
   transition: all .25s;
 }
 
 .btn-custom:hover {
   transform: scale(1.01);
-  color: #fff;
+  color: #FFD700;
+  background-color: #222;
+  border: 1px solid;
+  border-color: #FFD700;
+}
+
+.panel, .panel-heading, .panel-footer, .panel > .list-group, .panel > .list-group > a > .list-group-item, .panel > .list-group > .list-group-item{
+  background-color: #222;
+  color: #9d9d9d;
+  border-color: #9d9d9d;
+  border-radius: 0px;
 }

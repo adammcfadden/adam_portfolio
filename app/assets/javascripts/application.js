@@ -17,4 +17,4 @@
 //= require_tree .
 
 $(".alert").alert();
-window.setTimeout(function() { $(".alert").alert().slideUp(); }, 5000);
+window.setTimeout(function() { $(".alert").alert().slideUp("slow"); }, 5000);
