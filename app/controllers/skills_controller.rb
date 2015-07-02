@@ -10,6 +10,7 @@ end
 
 def new
   @skill = Skill.new
+  @skills = Skill.all
 end
 
 def create

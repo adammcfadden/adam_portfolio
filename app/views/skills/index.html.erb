@@ -1,11 +1,18 @@
 <div class="panel">
   <div class="panel-heading">
-    <h1>Hello</h1>
+    <h1>Adam Mcfadden</h1>
   </div>
-  <div class="panel-body">
-    <ul>
-      <% @skills.each do |skill| %>
-      <li><%= link_to skill.name, skill_path(skill) %></li>
+  <div class="panel-body text-center">
+    <h3>Skills</h3>
+    <ul class="list-group">
+      <% if @skills.any? %>
+        <% @skills.each do |skill| %>
+          <%= link_to skill_path(skill) do %>
+            <li class="list-group-item">
+              <%= skill.name %>
+            </li>
+          <% end %>
+        <% end %>
       <% end %>
     </ul>
   </div>

@@ -3,26 +3,26 @@
     <div class="col-md-3">
       <div class="panel-heading">
 
-      <h1>Current Skills</h1>
+      <h1>Current Projects</h1>
       </div>
       <div class="panel-body">
 
       <ul>
-        <% if @skills %>
-          <% @skills.each do |skill| %>
-            <li><%= skill.name %></li>
+        <% if @projects %>
+          <% @projects.each do |project| %>
+            <li><%= project.name %></li>
           <% end %>
-          <% else %>
-            <p>
-              No Skills Added Yet.
-            </p>
+        <% else %>
+          <p>
+            No Projects Added Yet.
+          </p>
         <% end %>
       </ul>
       </div>
     </div>
     <div class="col-md-9">
       <div class="panel-heading">
-        <h1>Add a New Skill</h1>
+        <h1>Add a New Project</h1>
       </div>
       <div class="panel-body">
         <%= render "form" %>
