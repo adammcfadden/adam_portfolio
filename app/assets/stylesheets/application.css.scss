@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap';
+@import 'bootstrap-sprockets';
+
+body {
+  color: #222;
+  background-color: #9d9d9d;
+}
+
+a {
+  color: #22396C;
+  text-decoration: none;
+}
+
+h1 {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #222;
+  text-align: center;
+}
+
+.alert-custom {
+  background-color: #22396C;
+  color: #fff;
+  border-color: #22396C;
+  border-radius: 0px;
+}
+
+.btn-custom {
+  background-color: #22396C;
+  color: #fff;
+  border-color: #22396C;
+  transition: all .25s;
+}
+
+.btn-custom:hover {
+  transform: scale(1.01);
+  color: #fff;
+}

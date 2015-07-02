@@ -2,13 +2,32 @@
 <html>
 <head>
   <title>AdamPortfolio</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash[:notice] %>
+  <div class="alert alert-dismisable alert-custom text-center" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
+
+<nav class='navbar navbar-inverse navbar-fixed-bottom navbar-success' role='navigation'>
+  <div class="navbar-header">
+    <%= link_to "Adam McFadden", skills_path, class: "navbar-brand" %>
+
+  </div>
+  <ul class='nav navbar-nav'>
+    <li><%= link_to "New Skill", new_skill_path %> </li>
+    <li><a href="#">Projects</a></li>
+  </ul>
+</nav>
 
 </body>
 </html>
