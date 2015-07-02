@@ -7,10 +7,17 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-3">
+        <% if @project.skill %>
         <h3>Skill Used: <%= @project.skill.name %> </h3>
         <p>
           <%= @project.skill.description %>
         </p>
+        <% else %>
+        <h3>Skill Used: </h3>
+        <p>
+          This Project is not attached to any skill, please edit the project and add a skill.
+        </p>
+        <% end %>
       </div>
       <div class="col-md-9 text-right">
         <h3>Project Description</h3>

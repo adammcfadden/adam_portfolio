@@ -6,11 +6,10 @@
       <h1>Current Projects</h1>
       </div>
       <div class="panel-body">
-
       <ul>
-        <% if @projects %>
+        <% if @projects != nil && @projects.length > 0 %>
           <% @projects.each do |project| %>
-            <li><%= project.name %></li>
+            <li><%= link_to project.name, project_path(project) %></li>
           <% end %>
         <% else %>
           <p>

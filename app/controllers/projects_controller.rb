@@ -49,7 +49,11 @@ def destroy
   @skill = @project.skill
   @project.destroy
   flash[:notice] = @project.name + " Deleted"
-  redirect_to skill_path(@skill)
+  if @skill != nil
+    redirect_to skill_path(@skill)
+  else
+    redirect_to root_path
+  end
 end
 
 private def project_params

@@ -7,17 +7,17 @@
       </div>
       <div class="panel-body">
 
-      <ul>
-        <% if @skills %>
+        <ul>
+        <% if @skills != nil && @skills.length > 0 %>
           <% @skills.each do |skill| %>
-            <li><%= skill.name %></li>
+            <li><%= link_to skill.name, skill_path(skill) %></li>
           <% end %>
-          <% else %>
-            <p>
-              No Skills Added Yet.
-            </p>
+        <% else %>
+          <p>
+            No Skills Added Yet.
+          </p>
         <% end %>
-      </ul>
+        </ul>
       </div>
     </div>
     <div class="col-md-9">
