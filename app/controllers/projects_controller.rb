@@ -15,7 +15,7 @@ end
 def create
   @project = Project.new(project_params)
   if @project.save
-    @skill = (Skill.find(params[:project][:skill]))
+    @skill = (Skill.find(params[:project][:skill_id]))
     @skill.projects.push(@project)
     flash[:notice] = @project.name + " Added"
     redirect_to project_path(@project)
@@ -35,7 +35,7 @@ end
 def update
   @project = Project.find(params[:id])
   if @project.update(project_params)
-    @skill = (Skill.find(params[:project][:skill]))
+    @skill = (Skill.find(params[:project][:skill_id]))
     @skill.projects.push(@project)
     flash[:notice] = @project.name + " Updated"
     redirect_to project_path(@project)
@@ -57,7 +57,7 @@ def destroy
 end
 
 private def project_params
-  params.require(:project).permit(:name, :description, :github_url, :live_url)
+  params.require(:project).permit(:name, :description, :github_url, :live_url, :skill_id)
 end
 
 end
