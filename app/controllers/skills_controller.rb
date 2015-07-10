@@ -15,10 +15,10 @@ end
 
 def create
   @skill = current_user.skills.new(skill_params)
-  @skill.users.push(current_user)
   if @skill.save
+    @skill.users.push(current_user)
     flash[:notice] = "Skill Added"
-    redirect_to user_path(current_user)
+    redirect_to skill_path(@skill)
   else
     render :new
   end

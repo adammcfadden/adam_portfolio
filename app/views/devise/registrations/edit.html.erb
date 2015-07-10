@@ -71,6 +71,27 @@
   <%= f.text_area :description, placeholder: "Tell us about yourself", rows: "4" %>
   <%= f.check_box :admin, value: true %>
   <hr>
+  <h4>Select Skills that you have:</h4>
+
+  <% Skill.all.in_groups_of(6, false) do |skill_group| %>
+    <div class="row">
+    <% skill_group.each do |skill| %>
+      <% user_skills = @user.skills.map {|skill| skill} %>
+      <!-- <% if user_skills.include?(skill) %> -->
+      <div class="col-md-2 text-center">
+        <%= label 'skills', skill.name %>
+        <%= check_box_tag 'skills[]', skill.id, {checked: "checked"}%>
+      </div>
+      <!-- <% else %> -->
+      <div class="col-md-2 text-center">
+        <%= label 'skills', skill.name %>
+        <%= check_box_tag 'skills[]', skill.id %>
+      </div>
+      <!-- <% end %> -->
+    <% end %>
+    </div>
+  <% end %>
+  <hr>
   <%= f.password_field :current_password, autocomplete: "off", placeholder: "(we need your current password to confirm your changes)"%>
   <%= f.submit "Update", data: {disable_with: 'Saving...'}, class: "btn btn-block btn-default"%>
   <% end %>

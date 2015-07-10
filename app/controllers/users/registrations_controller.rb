@@ -18,9 +18,16 @@ before_filter :configure_account_update_params, only: [:update]
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    skills = params[:skills]
+    if skills != nil
+      skills.each do |skill|
+        @user.skills.push(Skill.find(skill))
+        Skill.find(skill).users.push(@user)
+      end
+    end
+  end
 
   # DELETE /resource
   # def destroy
