@@ -4,6 +4,7 @@
 This is a Portfolio Compiler site that is currently a work in progress.
 
 ##Visit the site at: https://murmuring-castle-8989.herokuapp.com/
+*Heroku currently not launching correctly*
 
 ##To open the site locally run the following code:
 
