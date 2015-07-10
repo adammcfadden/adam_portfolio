@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 describe 'The deleting projects path' do
-  before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
-  end
   it 'will let the user delete a project' do
     test_skill = FactoryGirl.create(:skill)
     test_project = FactoryGirl.create(:project)
@@ -15,10 +11,6 @@ describe 'The deleting projects path' do
 end
 
 describe 'The editing projects path' do
-  before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
-  end
   it 'will let the user add a project, will display the project on the root index' do
     test_skill = FactoryGirl.create(:skill)
     test_project = FactoryGirl.create(:project)

@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 describe 'The adding skills path' do
-  before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
-  end
   it 'will let the user add a skill, will display the skill on the root index' do
     visit new_skill_path
     fill_in 'skill_name', with: 'Ruby'

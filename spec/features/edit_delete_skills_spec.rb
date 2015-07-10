@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 describe 'The deleting skills path' do
-  before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
-  end
   it 'will let the user delete a skill, will display the skill on the root index' do
     test_skill = FactoryGirl.create(:skill)
     visit skill_path(test_skill)
@@ -14,10 +10,6 @@ describe 'The deleting skills path' do
 end
 
 describe 'The editing skills path' do
-  before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
-  end
   it 'will let the user add a skill, will display the skill on the root index' do
     test_skill = FactoryGirl.create(:skill)
     visit skill_path(test_skill)

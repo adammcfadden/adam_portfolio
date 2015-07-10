@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 describe 'The adding projects path' do
-  before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
-  end
   it 'will let the user add a project, will display the project on the root index' do
     test_skill = FactoryGirl.create(:skill)
     visit new_project_path
