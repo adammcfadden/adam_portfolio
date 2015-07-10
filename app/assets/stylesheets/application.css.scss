@@ -16,83 +16,83 @@
 
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
-
-body {
-  color: #222;
-  background-color: #9d9d9d;
-  margin-top: 50px;
-}
-
-a {
-  color: #9d9d9d;
-  text-decoration: none;
-}
-
-li{
-  text-decoration: none;
-}
-
-a:hover{
-  color: #58A848;
-}
-
-h1 {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 1px solid #222;
-  color: #58A848;
-  text-align: center;
-}
-
-h2, h3, h4, h5, h6{
-  color: #58A848;
-}
-
-.navbar-inverse .navbar-custom, .navbar-inverse .navbar-nav > li > a {
-  color: #58A848;
-}
-
-.navbar {
-  border-color: #9d9d9d;
-}
-
-.alert-custom {
-  background-color: #58A848;
-  color: #222;
-  border-color: #58A848;
-  border-radius: 0px;
-}
-
-.btn-custom {
-  background-color: #58A848;
-  color: #222;
-  border: 1px solid #000;
-  transition: all 1s;
-}
-
-.btn-custom:hover {
-  color: #58A848;
-  background-color: #222;
-  border: 1px solid #58A848;
-}
-
-.panel, .panel-heading, .panel-footer, .panel > .list-group, .panel > .list-group > a > .list-group-item, .panel > .list-group > .list-group-item{
-  background-color: #222;
-  color: #9d9d9d;
-  border-color: #9d9d9d;
-  border-radius: 0px;
-}
-
-.panel > .panel-body > .list-group > a > .list-group-item:hover, .panel > .list-group > .list-group-item:hover{
-  background-color: #222;
-  color: #58A848;
-}
-
-.panel > .panel-body > .list-group > a, .panel > .panel-body > .list-group > a > li {
-  background-color: #58A848;
-  color: #222;
-  text-decoration: none;
-  margin-bottom: 10px;
-  border-color: #9d9d9d;
-  transition: all 1s;
-}
+//
+// body {
+//   color: #222;
+//   background-color: #9d9d9d;
+//   margin-top: 50px;
+// }
+//
+// a {
+//   color: #9d9d9d;
+//   text-decoration: none;
+// }
+//
+// li{
+//   text-decoration: none;
+// }
+//
+// a:hover{
+//   color: #58A848;
+// }
+//
+// h1 {
+//   padding-bottom: 9px;
+//   margin: 40px 0 20px;
+//   border-bottom: 1px solid #222;
+//   color: #58A848;
+//   text-align: center;
+// }
+//
+// h2, h3, h4, h5, h6{
+//   color: #58A848;
+// }
+//
+// .navbar-inverse .navbar-custom, .navbar-inverse .navbar-nav > li > a {
+//   color: #58A848;
+// }
+//
+// .navbar {
+//   border-color: #9d9d9d;
+// }
+//
+// .alert-custom {
+//   background-color: #58A848;
+//   color: #222;
+//   border-color: #58A848;
+//   border-radius: 0px;
+// }
+//
+// .btn-custom {
+//   background-color: #58A848;
+//   color: #222;
+//   border: 1px solid #000;
+//   transition: all 1s;
+// }
+//
+// .btn-custom:hover {
+//   color: #58A848;
+//   background-color: #222;
+//   border: 1px solid #58A848;
+// }
+//
+// .panel, .panel-heading, .panel-footer, .panel > .list-group, .panel > .list-group > a > .list-group-item, .panel > .list-group > .list-group-item{
+//   background-color: #222;
+//   color: #9d9d9d;
+//   border-color: #9d9d9d;
+//   border-radius: 0px;
+// }
+//
+// .panel > .panel-body > .list-group > a > .list-group-item:hover, .panel > .list-group > .list-group-item:hover{
+//   background-color: #222;
+//   color: #58A848;
+// }
+//
+// .panel > .panel-body > .list-group > a, .panel > .panel-body > .list-group > a > li {
+//   background-color: #58A848;
+//   color: #222;
+//   text-decoration: none;
+//   margin-bottom: 10px;
+//   border-color: #9d9d9d;
+//   transition: all 1s;
+// }

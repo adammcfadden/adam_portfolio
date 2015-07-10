@@ -8,26 +8,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
 <% if flash[:notice] %>
   <div class="alert alert-dismisable alert-custom text-center" role="alert" style="margin-bottom: 0px;">
     <%= flash[:notice] %>
   </div>
 <% end %>
+<% if flash[:alert] %>
+  <div class="alert alert-dismisable alert-custom text-center" role="alert" style="margin-bottom: 0px;">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<%= render 'layouts/navbar' %>
 
 <div class="container-fluid">
   <%= yield %>
 </div>
-
-<nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
-  <div class="navbar-header">
-    <%= link_to "Adam McFadden", skills_path, class: "navbar-custom navbar-brand" %>
-
-  </div>
-  <ul class='nav navbar-nav'>
-    <li><%= link_to "Add Skill", new_skill_path, class: "navbar-custom" %> </li>
-    <li><%= link_to "Add Project", new_project_path, class: "navbar-custom" %> </li>
-  </ul>
-</nav>
 
 </body>
 </html>
