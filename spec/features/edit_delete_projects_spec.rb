@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 describe 'The deleting projects path' do
-  it 'will let the user delete a project' do
+  before :each do
     user = FactoryGirl.create(:user)
     login_as(user)
+  end
+  it 'will let the user delete a project' do
     test_skill = FactoryGirl.create(:skill)
     test_project = FactoryGirl.create(:project)
     visit project_path(test_project)
@@ -13,9 +15,11 @@ describe 'The deleting projects path' do
 end
 
 describe 'The editing projects path' do
-  it 'will let the user add a project, will display the project on the root index' do
+  before :each do
     user = FactoryGirl.create(:user)
     login_as(user)
+  end
+  it 'will let the user add a project, will display the project on the root index' do
     test_skill = FactoryGirl.create(:skill)
     test_project = FactoryGirl.create(:project)
     visit project_path(test_project)
@@ -25,10 +29,7 @@ describe 'The editing projects path' do
     click_on 'Update Project'
     expect(page).to have_content('Ruby')
   end
-
   it 'will return an error if a field is left empty' do
-    user = FactoryGirl.create(:user)
-    login_as(user)
     test_skill = FactoryGirl.create(:skill)
     test_project = FactoryGirl.create(:project)
     visit project_path(test_project)
