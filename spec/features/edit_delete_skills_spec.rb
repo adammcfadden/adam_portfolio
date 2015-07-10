@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe 'The deleting skills path' do
   it 'will let the user delete a skill, will display the skill on the root index' do
-    test_skill = Skill.create(name: "Java", description: "A programming language")
+    user = FactoryGirl.create(:user)
+    login_as(user)
+    test_skill = FactoryGirl.create(:skill)
     visit skill_path(test_skill)
     click_on "Delete Java"
     expect(page).to have_content('Java Deleted')
@@ -11,7 +13,9 @@ end
 
 describe 'The editing skills path' do
   it 'will let the user add a skill, will display the skill on the root index' do
-    test_skill = Skill.create(name: "Java", description: "A programming language")
+    user = FactoryGirl.create(:user)
+    login_as(user)
+    test_skill = FactoryGirl.create(:skill)
     visit skill_path(test_skill)
     click_on "Edit Java"
     fill_in 'skill_name', with: 'Ruby'
@@ -21,7 +25,9 @@ describe 'The editing skills path' do
   end
 
   it 'will return an error if a field is left empty' do
-    test_skill = Skill.create(name: "Java", description: "A programming language")
+    user = FactoryGirl.create(:user)
+    login_as(user)
+    test_skill = FactoryGirl.create(:skill)
     visit skill_path(test_skill)
     click_on "Edit Java"
     fill_in 'skill_name', with: ''

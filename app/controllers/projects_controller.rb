@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
- def show
+authorize_resource  
+def show
   @project = Project.find(params[:id])
 end
 
@@ -13,7 +14,7 @@ def new
 end
 
 def create
-  @project = Project.new(project_params)
+  @project = current_user.projects.new(project_params)
   if @project.save
     @skill = (Skill.find(params[:project][:skill_id]))
     @skill.projects.push(@project)

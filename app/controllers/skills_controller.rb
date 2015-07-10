@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-
+authorize_resource
 def index
   @skills = Skill.all
 end
@@ -14,7 +14,7 @@ def new
 end
 
 def create
-  @skill = Skill.new(skill_params)
+  @skill = current_user.skills.new(skill_params)
   if @skill.save
     flash[:notice] = "Skill Added"
     redirect_to root_path

@@ -8,7 +8,9 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.id != nil
-      can :manage user
+      can :manage, Skill, user_id: user.id
+      can :manage, Project, user_id: user.id
+      can :manage, User, id: user.id
     else
       can :read, :all
     end

@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   resources :skills
   resources :projects, except: [:index]
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
 
 end
