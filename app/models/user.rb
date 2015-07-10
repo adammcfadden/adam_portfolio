@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
 
 
   def address_checker
-    if (self.street_address || self.state || self.city || self.zip)
-      false
-    else
+    if (self.street_address && self.state && self.city && self.zip)
       true
+    else
+      false
     end
   end
 

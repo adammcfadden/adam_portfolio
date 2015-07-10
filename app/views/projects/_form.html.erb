@@ -6,5 +6,5 @@
   <%= f.url_field :github_url, placeholder: "Github Url" %>
   <%= f.url_field :live_url, placeholder: "Live hosted Url" %>
   <%= f.collection_select :skill_id, Skill.all, :id, :name, class: "form-control", id:"project_skill", prompt: "Select a Skill" %>
-  <%= f.submit class: "btn-custom btn-block" %>
+  <%= f.submit class: "btn-primary btn-block" %>
 <% end %>
