@@ -11,6 +11,7 @@ class Ability
       can :manage, Skill, user_id: user.id
       can :manage, Project, user_id: user.id
       can :manage, User, id: user.id
+      can :read, :all
     else
       can :read, :all
     end

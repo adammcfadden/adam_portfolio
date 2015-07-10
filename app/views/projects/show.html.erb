@@ -2,13 +2,13 @@
 
 <div class="panel">
   <div class="panel-heading">
-    <h1><%= @project.name %></h1>
+    <h1 class="page-header"><%= @project.name %><span style="float: right">By: <%= link_to @project.user.first_name, user_path(@project.user) %></span></h1>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-3">
         <% if @project.skill %>
-        <h3>Skill Used: <%= @project.skill.name %> </h3>
+        <h3>Skill Used: <%= link_to @project.skill.name, skill_path(@project.skill) %> </h3>
         <p>
           <%= @project.skill.description %>
         </p>

@@ -2,7 +2,7 @@
 
 <div class="panel">
   <div class="panel-heading">
-    <h1><%= @skill.name %></h1>
+    <h1 class="page-header text-center"><%= @skill.name %></h1>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -27,3 +27,34 @@
 
   </div>
 </div>
+<h2 class="page-header text-center">Users with this Skill:</h2>
+<% if @skill.users.any? %>
+  <% @skill.users.in_groups_of(4, false) do |user_group| %>
+    <div class="row">
+      <% user_group.each do |user| %>
+        <%= link_to user_path(user) do %>
+          <div class="col-md-3">
+            <h3><%= user.first_name %> <%= user.last_name %></h3>
+            <% if user.description != nil %>
+            <p>
+              <%= user.summarize %>
+            </p>
+            <% end %>
+            <h5>Top Skills:</h5>
+            <% user.skills.take(3).each do |skill| %>
+              |<%= skill.name %>|
+            <% end %>
+            <h5>Top Projects:</h5>
+            <% user.projects.take(3).each do |project| %>
+              |<%= project.name %>|
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>
+    No Users have been added
+  </p>
+<% end %>

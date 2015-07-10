@@ -1,0 +1,39 @@
+<div class="panel">
+  <div class="panel-heading text-center">
+    <h1>Portfolio Compiler</h1>
+    <p>
+      Hi, Welcome to my portfolio compiler! Please browse through portfolios and learn a little about each dev. If you would like to showcase your work here please <% if current_user == nil %><%= link_to "Create an Account.", new_user_registration_path %> or <%= link_to "Login", new_user_session_path %><% end %>
+    </p>
+  </div>
+  <hr>
+  <% if @users.any? %>
+    <% @users.in_groups_of(4, false) do |user_group| %>
+      <div class="row">
+        <% user_group.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <div class="col-md-3">
+              <h3><%= user.first_name %> <%= user.last_name %></h3>
+              <% if user.description != nil %>
+              <p>
+                <%= user.summarize %>
+              </p>
+              <% end %>
+              <h5>Top Skills:</h5>
+              <% user.skills.take(3).each do |skill| %>
+                |<%= skill.name %>|
+              <% end %>
+              <h5>Top Projects:</h5>
+              <% user.projects.take(3).each do |project| %>
+                |<%= project.name %>|
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>
+      No Users have been added
+    </p>
+  <% end %>
+</div>

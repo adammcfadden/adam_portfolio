@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root to: 'skills#index'
+  root to: 'users#index'
 
   resources :skills
   resources :projects, except: [:index]

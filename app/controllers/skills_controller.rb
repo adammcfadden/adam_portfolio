@@ -17,7 +17,7 @@ def create
   @skill = current_user.skills.new(skill_params)
   if @skill.save
     flash[:notice] = "Skill Added"
-    redirect_to root_path
+    redirect_to user_path(current_user)
   else
     render :new
   end
