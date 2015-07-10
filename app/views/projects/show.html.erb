@@ -1,5 +1,3 @@
-
-
 <div class="panel">
   <div class="panel-heading">
     <h1 class="page-header"><%= @project.name %><span style="float: right">By: <%= link_to @project.user.first_name, user_path(@project.user) %></span></h1>
@@ -10,7 +8,7 @@
         <% if @project.skill %>
         <h3>Skill Used: <%= link_to @project.skill.name, skill_path(@project.skill) %> </h3>
         <p>
-          <%= @project.skill.description %>
+          <%= @project.skill.summarize %>
         </p>
         <% else %>
         <h3>Skill Used: </h3>

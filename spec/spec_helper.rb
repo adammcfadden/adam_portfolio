@@ -20,11 +20,11 @@ SimpleCov.start
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  
+
   #Create a user and login before each spec is run.
   config.before :each do
-    user = FactoryGirl.create(:user)
-    login_as(user)
+    @user = FactoryGirl.create(:user)
+    login_as(@user)
   end
 
   # rspec-expectations config goes here. You can use an alternate
