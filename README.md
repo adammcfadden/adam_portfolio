@@ -1,9 +1,11 @@
 #Adam McFadden Rails Portfolio
 
 ##Description
-This is a Portfolio site that is currently a work in progress.
+This is a Portfolio Compiler site that is currently a work in progress.
 
-##To open the site run the following code:
+##Visit the site at: https://murmuring-castle-8989.herokuapp.com/
+
+##To open the site locally run the following code:
 
 ```
 git clone https://github.com/adammcfadden/adam_portfolio.git
