@@ -1,0 +1,31 @@
+<div class="panel">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel-heading">
+
+      <h1>Current Projects</h1>
+      </div>
+      <div class="panel-body">
+      <ul>
+        <% if @projects != nil && @projects.length > 0 %>
+          <% @projects.each do |project| %>
+            <li><%= link_to project.name, project_path(project) %></li>
+          <% end %>
+        <% else %>
+          <p>
+            No Projects Added Yet.
+          </p>
+        <% end %>
+      </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="panel-heading">
+        <h1>Add a New Project</h1>
+      </div>
+      <div class="panel-body">
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+</div>

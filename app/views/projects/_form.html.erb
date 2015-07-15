@@ -1,0 +1,10 @@
+<%= render "layouts/errors", object: @project %>
+
+<%= bootstrap_form_for(@project) do |f| %>
+  <%= f.text_field :name, placeholder: "Project Name" %>
+  <%= f.text_area :description, placeholder: "Enter a Project Description", rows: "6"%>
+  <%= f.url_field :github_url, placeholder: "Github Url" %>
+  <%= f.url_field :live_url, placeholder: "Live hosted Url" %>
+  <%= f.collection_select :skill_id, Skill.all, :id, :name, class: "form-control", id:"project_skill", prompt: "Select a Skill" %>
+  <%= f.submit class: "btn-primary btn-block" %>
+<% end %>

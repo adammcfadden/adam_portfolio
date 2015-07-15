@@ -1,0 +1,79 @@
+<h1 class="page-header text-center">
+  Profile for <strong><%= @user.first_name %> <%= @user.last_name %></strong>
+</h1>
+<div class="row">
+<% if current_user != nil %>
+  <span style="float: left">
+  <p class="inline">
+    Email: <%= @user.email %><br>
+    <% if @user.phone == nil && current_user == @user %>
+      <span>Please <%= link_to "Add", edit_user_registration_path %> your phone number.</span>
+    <% elsif @user.phone == nil && current_user != @user%>
+    <% else %>
+      Phone: <%= number_to_phone @user.phone %>
+    <% end %>
+  </p>
+  </span>
+  <span style="float: right">
+  <p class="inline">
+    <% if @user.address_checker && current_user == @user %>
+    <span>Please <%= link_to "Add", edit_user_registration_path %> your address.</span>
+    <% elsif @user.address_checker && current_user != @user%>
+    <% else %>
+    <u>Address:</u><br>
+    <%= @user.street_address %><br>
+    <%= @user.city %>, <%= @user.state %> <%= @user.zip %>
+    <% end %>
+  </p>
+  </span>
+  <% else %>
+    <div class='text-center'>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default" %> or <%= link_to "Login", new_user_session_path, class: "btn btn-default" %> to Access <%= @user.first_name %>'s full profile.
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <h3>About <%= @user.first_name %></h3>
+  <p>
+    <%= @user.description %>
+  </p>
+</div>
+
+<% if current_user == @user %>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-block btn-default" %>
+<% end %>
+<hr>
+<h1 class="page-header text-center">Skills</h1>
+  <ul class="list-group">
+    <% if @user.skills.any? %>
+      <% @user.skills.each do |skill| %>
+        <%= link_to skill_path(skill) do %>
+          <li class="list-group-item">
+            <%= skill.name %>
+            <span style="float: right"><%= skill.summarize %></span>
+          </li>
+        <% end %>
+      <% end %>
+      <% else %>
+      <p>
+        No Skills have been added
+      </p>
+    <% end %>
+  </ul>
+<h1 class="page-header text-center">Projects</h1>
+  <ul class="list-group">
+    <% if @user.projects.any? %>
+      <% @user.projects.each do |project| %>
+        <%= link_to project_path(project) do %>
+        <li class="list-group-item">
+          <%= project.name %>
+          <span style="float: right"><%= project.summarize %></span>
+        </li>
+        <% end %>
+      <% end %>
+      <% else %>
+      <p>
+        No Projects have been added
+      </p>
+    <% end %>
+  </ul>
