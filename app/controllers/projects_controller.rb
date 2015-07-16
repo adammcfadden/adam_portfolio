@@ -1,9 +1,5 @@
 class ProjectsController < ApplicationController
-<<<<<<< HEAD
 load_and_authorize_resource
-=======
-load_and_authorize_resource
->>>>>>> 29e65dfbdeec146db4b2f4c2cbca8bd4fc9d8d2b
 def show
   @project = Project.find(params[:id])
 end
