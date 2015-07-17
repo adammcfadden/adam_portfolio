@@ -24,12 +24,15 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :test do
+  gem 'poltergeist'
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem 'factory_girl_rails'
   gem 'simplecov', require: false
 end
 

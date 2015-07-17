@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'The adding projects path' do
   it 'will let the user add a project, will display the project on the root index' do
+    user_login
     test_skill = FactoryGirl.create(:skill)
     visit new_project_path
     fill_in 'project_name', with: 'Elven Sword'
@@ -15,6 +16,7 @@ describe 'The adding projects path' do
     expect(page).to have_content('Java')
   end
   it 'will return an error if a field is left empty' do
+    user_login
     visit new_project_path
     fill_in 'project_name', with: 'Ruby'
     click_on 'Create Project'

@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :skills
   has_many :projects
+  has_many :posts
+  has_many :comments
+  has_many :references
 
 
   def address_checker

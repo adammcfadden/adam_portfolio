@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'The deleting skills path' do
   it 'will let the user delete a skill, will display the skill on the root index' do
+    user_login
     test_skill = FactoryGirl.create(:skill)
     @user.skills.push(test_skill)
     visit skill_path(test_skill)
@@ -12,6 +13,7 @@ end
 
 describe 'The editing skills path' do
   it 'will let the user add a skill, will display the skill on the root index' do
+    user_login
     test_skill = FactoryGirl.create(:skill)
     @user.skills.push(test_skill)
     visit skill_path(test_skill)
@@ -22,6 +24,7 @@ describe 'The editing skills path' do
     expect(page).to have_content('Ruby')
   end
   it 'will return an error if a field is left empty' do
+    user_login
     test_skill = FactoryGirl.create(:skill)
     @user.skills.push(test_skill)
     visit skill_path(test_skill)

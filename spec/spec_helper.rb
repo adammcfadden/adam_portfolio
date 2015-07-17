@@ -22,7 +22,7 @@ SimpleCov.start
 RSpec.configure do |config|
 
   #Create a user and login before each spec is run.
-  config.before :each do
+  def user_login 
     @user = FactoryGirl.create(:user)
     login_as(@user)
   end
