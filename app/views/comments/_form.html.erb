@@ -1,7 +1,7 @@
 <%= render "layouts/errors", object: @comment %>
 
-<%= bootstrap_form_for [@post, @comment] do |f| %>
-  <%= f.text_area :body, placeholder: "Enter a Comment", rows: "6"%>
+<%= bootstrap_form_for [@post, @comment], remote: true do |f| %>
+  <%= f.text_area :body, placeholder: "Enter a Comment", rows: "6", autofocus: true %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%= f.submit class: "btn-primary btn-block" %>

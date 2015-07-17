@@ -11,14 +11,20 @@ end
 
 def new
   @post = Post.find(params[:post_id])
+  respond_to do |format|
+    format.html { render :new }
+    format.js
+  end
 end
 
 def create
   @post = Post.find(params[:post_id])
   @comment = @post.comments.new(comment_params)
   if @comment.save
-    flash[:notice] = "Comment Added"
-    redirect_to user_path(@post.user)
+    respond_to do |format|
+      format.html { redirect_to user_path(@post.user) }
+      format.js
+    end
   else
     render :new
   end
