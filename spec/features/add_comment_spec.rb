@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Adding Comments path' do
-  it 'will let a user add a comment', js: true do
+  pending 'will let a user add a comment', js: true do
     user_login
     test_post = FactoryGirl.create(:post, user_id: @user.id)
     visit user_path(@user)
