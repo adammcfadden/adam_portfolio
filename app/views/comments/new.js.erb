@@ -1,2 +1,2 @@
-$('#comment-box').html('<%= j render "form" %><br>');
-$('#new-comment-button').hide();
+$('#comment-box<%= @post.id %>').html('<%= j render "form" %><br>');
+$('#new-comment-button<%= @post.id %>').hide();

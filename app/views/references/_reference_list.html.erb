@@ -1,0 +1,13 @@
+<button id="reference-hide"  class="btn btn-block btn-default">Hide References</button>
+<ul class="list-group">
+  <% if @user.references.any? %>
+    <% @user.references.each do |reference| %>
+      <li class="list-group-item">
+        <%= reference.name %>
+    <% end %>
+  <% else %>
+    <p>
+      No references have been added
+    </p>
+  <% end %>
+</ul>

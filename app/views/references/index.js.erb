@@ -1,0 +1,7 @@
+$('#references-holder').html("<%= j render 'reference_list' %>");
+$('#reference-show').hide();
+
+$('#reference-hide').on("click", function() {
+  $('#references-holder').html("");
+  $('#reference-show').show();
+});

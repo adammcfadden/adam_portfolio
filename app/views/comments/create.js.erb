@@ -1,3 +1,3 @@
 $('#comment-holder<%= @post.id %>').prepend('<%= j render "comments/comment" %>');
-$('#comment-box').html('');
-$('#new-comment-button').show();
+$('#comment-box<%= @post.id %>').html('');
+$('#new-comment-button<%= @post.id %>').show();
