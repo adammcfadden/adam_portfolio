@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   resources :skills
   resources :projects, except: [:index]
   resources :users, only: [:show, :index]
+  resources :posts do
+    resources :comments
+  end
+  resources :references
 
 end

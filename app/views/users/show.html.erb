@@ -41,6 +41,8 @@
 
 <% if current_user == @user %>
 <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-block btn-default" %>
+<%= link_to "Add Post", new_post_path, class: "btn btn-block btn-default" %>
+<%= link_to "Add References", new_reference_path, class: "btn btn-block btn-default" %>
 <% end %>
 <hr>
 <h1 class="page-header text-center">Skills</h1>
@@ -77,3 +79,38 @@
       </p>
     <% end %>
   </ul>
+
+  <h1 class="page-header text-center">Posts</h1>
+    <ul class="list-group">
+      <% if @user.posts.any? %>
+        <% @user.posts.take(3).each do |post| %>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h4><%= post.name %></h4>
+            </div>
+            <div class="panel-body">
+              <%= post.body %>
+            </div>
+            <div class="panel-footer">
+              <%= link_to "Add Comment", new_post_comment_path(post), class: "btn btn-block btn-default" %>
+            </div>
+          </div>
+          <% if post.comments.any? %>
+            <% post.comments.take(3).each do |comment| %>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                <h5>Comment by: <%= comment.user.first_name %></h5>
+                </div>
+                <div class="panel-body">
+                  <%= comment.body %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% else %>
+        <p>
+          No Posts have been added
+        </p>
+      <% end %>
+    </ul>
