@@ -3,8 +3,7 @@
 ##Description
 This is a Portfolio Compiler site that is currently a work in progress.
 
-##Visit the site at: https://murmuring-castle-8989.herokuapp.com/
-*Heroku currently not launching correctly*
+##Visit the site at: https://boiling-reef-3160.herokuapp.com/
 
 ##To open the site locally run the following code:
 
