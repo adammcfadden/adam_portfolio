@@ -3,6 +3,8 @@ require 'rails_helper'
 describe Skill do
   it { should validate_presence_of :name }
   it { should validate_presence_of :description}
+  it { should belong_to :user}
+  it { should have_many :projects}
 
   it 'will summarize a description of text over 100 char' do
     skill = FactoryGirl.create(:skill, description: "Wes Anderson dreamcatcher occupy Echo Park, vinyl freegan flannel you probably haven't heard of them +1 American Apparel. Cornhole street art seitan lomo Kickstarter.")

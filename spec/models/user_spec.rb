@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe User do
+  it { should have_many :references}
+  it { should have_many :projects}
+  it { should have_many :skills}
+  it { should have_many :posts}
+  it { should have_many :comments}
+
   it 'will summarize a description of text over 100 char' do
     user_login
     @user.update(description: "Wes Anderson dreamcatcher occupy Echo Park, vinyl freegan flannel you probably haven't heard of them +1 American Apparel. Cornhole street art seitan lomo Kickstarter.")

@@ -77,8 +77,8 @@
         null,
         null,
         1,
-        24,
-        24,
+        41,
+        41,
         null,
         null,
         null,
@@ -559,6 +559,19 @@
         null,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/home/adam/Desktop/adam_portfolio/config/routes.rb": [
@@ -582,6 +595,9 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
         1,
         1,
         null,
@@ -717,10 +733,47 @@
         null,
         null
       ],
+      "/home/adam/Desktop/adam_portfolio/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
+      "/home/adam/Desktop/adam_portfolio/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/adam/Desktop/adam_portfolio/spec/models/post_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/home/adam/Desktop/adam_portfolio/app/models/post.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
       "/home/adam/Desktop/adam_portfolio/spec/models/project_spec.rb": [
         1,
         null,
         1,
+        2,
+        2,
         2,
         2,
         2,
@@ -764,10 +817,27 @@
         null,
         null
       ],
+      "/home/adam/Desktop/adam_portfolio/spec/models/reference_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
+      "/home/adam/Desktop/adam_portfolio/app/models/reference.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/home/adam/Desktop/adam_portfolio/spec/models/skill_spec.rb": [
         1,
         null,
         1,
+        2,
+        2,
         2,
         2,
         null,
@@ -811,6 +881,12 @@
         1,
         null,
         1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
         1,
         1,
         1,
@@ -1023,6 +1099,6 @@
         null
       ]
     },
-    "timestamp": 1437151344
+    "timestamp": 1437153914
   }
 }
