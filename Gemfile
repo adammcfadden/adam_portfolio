@@ -13,6 +13,8 @@ gem 'bootstrap_form'
 gem 'pry'
 gem 'devise'
 gem 'cancancan'
+gem 'faker'
+gem 'factory_girl_rails'
 
 group :development do
   gem 'byebug'
@@ -24,8 +26,6 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'
-  gem 'faker'
-  gem 'factory_girl_rails'
 end
 
 group :test do
